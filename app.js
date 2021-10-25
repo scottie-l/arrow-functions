@@ -115,13 +115,11 @@ let sum = (a, b, c, d) => a + b + c + d
 console.log(sum(1, 2, 3, 4));
 
 
-let objectLit = () => {
-  return {
+let objectLit = () => ({
     key1: 'value1',
     key2: 'value2',
     key3: 'value3',
-  };
-};
+})
 
 // TODO: Uncomment the following line of code to see the output in the browser console
 console.log(objectLit());
@@ -137,24 +135,24 @@ let sumAndProduct = (a, b) => {
 console.log(sumAndProduct(3, 9));
 
 
-let message = (name) => {
-  return `Hello, ${name}!`;
-};
+let message = name => `Hello, ${name}!`;
+
 
 // TODO: Uncomment the following line of code to see the output in the browser console
 console.log(message('Allie'));
 
 
-let Student = (name, age, hometown) => {
+const Student = function(name, age, hometown) => ({
   this.name = name;
   this.age = age;
-  this.hometown = hometown;
+  this.hometown = hometown;}
+    {super(name, age , hometown)
 };
 
-let joe = new Student('Joe', 'Schmoe', 100);
+let joe = new Student ('Joe', 'Schmoe', 100);
 
-// TODO: Uncomment the following line of code to see the output in the browser console
-// Note that the arrow function will cause this code to break!
+// // TODO: Uncomment the following line of code to see the output in the browser console
+// // Note that the arrow function will cause this code to break!
 console.log(joe);
 
 // TODO: After viewing the previous console.log(), return the code to a working state.
@@ -165,8 +163,8 @@ Student.prototype.greeting = function() {
   return `Hi, my name is ${this.name}`;
 };
 
-// TODO: Uncomment the following line of code to see the output in the browser console
-// Note that the arrow function will cause this method to break!
+// // TODO: Uncomment the following line of code to see the output in the browser console
+// // Note that the arrow function will cause this method to break!
 // console.log(joe.greeting());
 
 // TODO: After viewing the previous console.log(), return the code to a working state.
@@ -198,8 +196,8 @@ Student.prototype.scopeArrow = () => console.log(this);
 
 // TODO: Write a COMMENT below to answer the following questions.
 // 1. What is "this" when joe.scope() is invoked?
-//
+//  window
 // 2. What is "this" when joe.scopeArrow() is invoked?
-//
+//  
 // 3. Explain why "this" is different when an arrow function is used.
-//
+//  "this" retains its value of the functional scope.
